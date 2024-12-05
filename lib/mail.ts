@@ -23,7 +23,7 @@ export const sendVerificationEmail = async (
     const confirmLink = `http://localhost:3000/auth/new-verification?token=${token}`;
 
     await resend.emails.send({
-        from: "onboarding@resend.dev",
+        from: "send@panimalar.in",
         to: email,
         subject: "Confirm your email",
         html: `<p> <a href="${confirmLink}">here</a> to confirm email.</p>`
