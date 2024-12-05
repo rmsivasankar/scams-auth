@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { SessionProvider } from "next-auth/react";
+import { auth } from "@/auth";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -18,12 +20,16 @@ export const metadata: Metadata = {
   description: "Developed By R M Sivasankar",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const session = await auth();
+
   return (
+    <SessionProvider session={session}>
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -31,5 +37,6 @@ export default function RootLayout({
         {children}
       </body>
     </html>
+    </SessionProvider>
   );
 }
