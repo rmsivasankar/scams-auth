@@ -18,8 +18,10 @@ export const Header = ({label,}: HeaderProps) => {
             "text-3xl font-semibold",
                 font.className,
             )}>
-                🔒 Auth
+                🖲️ SCAMS
             </h1>
+            <p className="text-sm font-bold">Secure Cloud Access Management System</p>
+            <p className="text-red-600 text-sm font-bold">Authentication System</p>
             <p className="text-muted-foreground text-sm">
                 {label}
             </p>
