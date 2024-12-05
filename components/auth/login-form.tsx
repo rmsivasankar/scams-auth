@@ -14,6 +14,7 @@ import { FormSuccess } from '../form-success';
 import { login } from '@/actions/login';
 import { useState, useTransition } from 'react';
 import { useSearchParams } from 'next/navigation';
+import Link from 'next/link';
 
 const LoginForm = () => {
 
@@ -83,6 +84,11 @@ const LoginForm = () => {
                                 <FormControl>
                                     <Input {...field} disabled={isPending} placeholder='******' type='password' />
                                 </FormControl>
+                                <Button size="sm" variant="link" asChild className='px-0 font-normal'>
+                                    <Link href="/auth/reset">
+                                        Forgot Password
+                                    </Link>
+                                </Button>
                                 <FormMessage />
                             </FormItem>
                         )}
