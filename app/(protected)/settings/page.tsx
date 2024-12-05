@@ -22,7 +22,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { UserRole } from "@prisma/client";
 import { Switch } from "@/components/ui/switch"
 
-const SettingsPAge =  () => {
+const SettingsPAge = () => {
 
   const user = useCurrentuser();
 
@@ -39,6 +39,7 @@ const SettingsPAge =  () => {
       password: undefined,
       newPassword: undefined,
       role: user?.role || undefined,
+      isTwoFactorEnabled: user?.isTwoFactorEnabled || undefined
     }
   })
 
@@ -138,9 +139,9 @@ const SettingsPAge =  () => {
                 />
                   
               </>
-            )}
-
-           
+            )
+          }
+ 
 
           <FormField
             control={form.control}

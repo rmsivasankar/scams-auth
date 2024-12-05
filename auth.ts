@@ -8,7 +8,7 @@ import { getTwoFactorConfirmationbyId } from "./data/two-factor-confirmation"
 import { getAccountByUserId } from "./data/account"
 
 
-export const { auth, handlers: {GET, POST}, signIn, signOut} = NextAuth({
+export const { auth, handlers: {GET, POST}, signIn, signOut, update} = NextAuth({
   pages: {
     signIn: "/auth/login",
     error: "/auth/error",
